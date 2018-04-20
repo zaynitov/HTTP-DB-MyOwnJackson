@@ -27,7 +27,7 @@ public class JSONFormatterImpl implements JSONFormatter {
 
     @Override
     public String marshall(Object obj) {
-        StringBuilder resultString = new StringBuilder("{\n");
+        StringBuilder resultString = new StringBuilder("{\r\n");
 
         if (obj == null)
             return "";
@@ -99,7 +99,7 @@ public class JSONFormatterImpl implements JSONFormatter {
 
     public String arrayToString(Object[] arrayToString, Map<String, Integer> ctx) {
 
-        StringBuilder resultTermString = new StringBuilder("[\n");
+        StringBuilder resultTermString = new StringBuilder("[\r\n");
         int preValue = ctx.get("bottom");
         ctx.put("bottom", preValue + 2);
         for (int i = 0; i < arrayToString.length; i++) {
@@ -107,17 +107,17 @@ public class JSONFormatterImpl implements JSONFormatter {
             if (i == (arrayToString.length - 1)) {
 
                 resultTermString.append(getStringOfSpaces(ctx.get("bottom")) +
-                        marshall(arrayToString[i])+"\n");
+                        marshall(arrayToString[i])+"\r\n");
                 resultTermString.delete(resultTermString.length() - 1, resultTermString.length());
 
-                resultTermString.append("\n" + getStringOfSpaces(ctx.get("bottom") - 2) + "]\n");
+                resultTermString.append("\n" + getStringOfSpaces(ctx.get("bottom") - 2) + "]\r\n");
 
                 break;
             }
 
 
             resultTermString.append(getStringOfSpaces(ctx.get("bottom")) +
-                    marshall(arrayToString[i])+",\n");
+                    marshall(arrayToString[i])+",\r\n");
 
         }
         preValue = ctx.get("bottom");

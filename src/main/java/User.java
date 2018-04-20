@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 public class User implements Serializable{
     private String name;
     private int age;
-    private Integer salary;
+    private double salary;
 
     public String getName() {
         return name;
@@ -18,7 +18,7 @@ public class User implements Serializable{
         return age;
     }
 
-    public User(String name, int age, Integer salary) {
+    public User(String name, int age, Double salary) {
         this.name = name;
         this.age = age;
         this.salary = salary;
@@ -29,11 +29,11 @@ public class User implements Serializable{
         this.age = age;
     }
 
-    public Integer getSalary() {
+    public double getSalary() {
         return salary;
     }
 
-    public void setSalary(Integer salary) {
+    public void setSalary(double salary) {
         this.salary = salary;
     }
 }

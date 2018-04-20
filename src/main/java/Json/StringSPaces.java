@@ -10,6 +10,7 @@ public class StringSPaces {
             resultTermString.append(" ");
         }
        return resultTermString.toString();
+
     }
 
 }
