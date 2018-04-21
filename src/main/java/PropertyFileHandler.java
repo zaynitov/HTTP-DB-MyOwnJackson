@@ -22,10 +22,10 @@ public class PropertyFileHandler {
         this.root = root;
     }
 
-    public void initPortAndRoot() throws Exception {
+    public void initPortAndRoot(String properyFileDestination) throws Exception {
         Properties prop = new Properties();
         InputStream input = null;
-        input = new FileInputStream("C:\\Users\\AZAYNITOV\\IdeaProjects\\session6\\src\\main\\resources\\config.properties");
+        input = new FileInputStream(properyFileDestination);
         prop.load(input);
         setPort(Integer.parseInt(prop.getProperty("port")));
         setRoot(prop.getProperty("root"));

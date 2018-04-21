@@ -84,6 +84,9 @@ public class RequestHandler {
         Set<Integer> setOfId = new TreeSet<>();
         File dir = new File(root);
 
+        if (dir.listFiles() == null) {
+ return 1;
+        }
         for (File item : dir.listFiles()) {
 
             if (item.getName().equals("config.properties")) continue;
