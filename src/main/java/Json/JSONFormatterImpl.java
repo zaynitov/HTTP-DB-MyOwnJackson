@@ -98,6 +98,7 @@ public class JSONFormatterImpl implements JSONFormatter {
 
 
     public String arrayToString(Object[] arrayToString, Map<String, Integer> ctx) {
+        if (arrayToString.length==0) return "[]";
 
         StringBuilder resultTermString = new StringBuilder("[\r\n");
         int preValue = ctx.get("bottom");
